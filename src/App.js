@@ -52,6 +52,7 @@ const HTMLContent = ({
   bgColor,
   modelPath,
   position,
+  zoom,
 }) => {
   const ref = useRef();
   useFrame(() => (ref.current.rotation.y += 0.01));
@@ -64,7 +65,7 @@ const HTMLContent = ({
   return (
     <Section factor={1.5} offset={1}>
       <group position={[0, position, 0]}>
-        <mesh ref={ref} position={[0, -35, 0]}>
+        <mesh ref={ref} scale={zoom} position={[0,-35,0]} > 
           <Model url={modelPath} />
         </mesh>
         <Html fullscreen portal={domContent}>
@@ -117,8 +118,9 @@ export default function App() {
           <HTMLContent
             domContent={domContent}
             bgColor='#f15946'
-            modelPath='/armchairYellow.gltf'
-            position={250}>
+            modelPath='/basketSwingChair.gltf'
+            position={250}
+            zoom={[40,40,40]}>
             <span>Meet the new </span>
             <span>shopping experience </span>
             <span>for online chairs</span>
@@ -126,8 +128,9 @@ export default function App() {
           <HTMLContent
             domContent={domContent}
             bgColor='#571ec1'
-            modelPath='/armchairGreen.gltf'
-            position={0}>
+            modelPath='/eggChair.gltf'
+            position={0}
+            zoom={[130,130,130]}>
             <span>Shit... we even</span>
             <span>got different colors</span>
           </HTMLContent>
