@@ -12,6 +12,7 @@
     "lerp": "^1.0.3",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-icons": "^4.3.1",
     "react-intersection-observer": "^8.28.5",
     "react-scripts": "3.4.3",
     "react-spring": "^8.0.27",
